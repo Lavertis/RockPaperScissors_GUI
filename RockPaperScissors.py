@@ -20,13 +20,13 @@ computerScore = 0
 playerScore = 0
 
 
-def game(gracz):
+def game(player):
     computer = randint(1, 3)
-    nazwa = ['', 'Rock', 'Paper', 'Scissors']
-    computerLabel.config(text="\nYour opponent has chosen " + nazwa[computer] + "")
-    if gracz == computer:
+    weapon = ['', 'Rock', 'Paper', 'Scissors']
+    computerLabel.config(text="\nYour opponent has chosen " + weapon[computer] + "")
+    if player == computer:
         resultLabel.config(text="Draw!", fg="orange", font=("Times New Roman", 18, 'bold'))
-    elif gracz == computer + 1 or gracz == 1 and computer == 3:
+    elif player == computer + 1 or player == 1 and computer == 3:
         resultLabel.config(text="Victory!", fg="green", font=("Times New Roman", 18, 'bold'))
         global playerScore
         playerScore += 1
