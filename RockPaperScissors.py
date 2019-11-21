@@ -16,8 +16,8 @@ resultLabel.pack()
 scoreLabel = Label(bottomFrame, font=("Times New Roman", 18, 'bold'))
 scoreLabel.pack()
 
-computerScore = 0
-playerScore = 0
+computer_score = 0
+player_score = 0
 
 
 def game(player):
@@ -28,24 +28,24 @@ def game(player):
         resultLabel.config(text="Draw!", fg="orange", font=("Times New Roman", 18, 'bold'))
     elif player == computer + 1 or player == 1 and computer == 3:
         resultLabel.config(text="Victory!", fg="green", font=("Times New Roman", 18, 'bold'))
-        global playerScore
-        playerScore += 1
+        global player_score
+        player_score += 1
     else:
         resultLabel.config(text="Defeat!", fg="red", font=("Times New Roman", 18, 'bold'))
-        global computerScore
-        computerScore += 1
-    scoreLabel.config(text=str(playerScore) + " : " + str(computerScore) + "\n")
+        global computer_score
+        computer_score += 1
+    scoreLabel.config(text=str(player_score) + " : " + str(computer_score) + "\n")
 
 
-def buttonRockOnClick():
+def button_rock_on_click():
     game(1)
 
 
-def buttonPaperOnClick():
+def button_paper_on_click():
     game(2)
 
 
-def buttonScissorsOnClick():
+def button_scissors_on_click():
     game(3)
 
 
@@ -53,9 +53,9 @@ rock = PhotoImage(file="images/100x100/Rock.png")
 paper = PhotoImage(file="images/100x100/Paper.png")
 scissors = PhotoImage(file="images/100x100/Scissors.png")
 
-buttonRock = Button(topFrame, height=100, width=100, command=buttonRockOnClick, image=rock)
-buttonPaper = Button(topFrame, height=100, width=100, command=buttonPaperOnClick, image=paper)
-buttonScissors = Button(topFrame, height=100, width=100, command=buttonScissorsOnClick, image=scissors)
+buttonRock = Button(topFrame, height=100, width=100, command=button_rock_on_click, image=rock)
+buttonPaper = Button(topFrame, height=100, width=100, command=button_paper_on_click, image=paper)
+buttonScissors = Button(topFrame, height=100, width=100, command=button_scissors_on_click, image=scissors)
 
 buttonRock.pack(side=LEFT)
 buttonPaper.pack(side=LEFT)
