@@ -1,5 +1,5 @@
 from tkinter import *
-import game
+import main
 
 window = Tk()
 window.geometry('450x250')
@@ -18,9 +18,9 @@ scoreLabel.pack()
 rock = PhotoImage(file='images/100x100/Rock.png')
 paper = PhotoImage(file='images/100x100/Paper.png')
 scissors = PhotoImage(file='images/100x100/Scissors.png')
-buttonRock = Button(topFrame, height=100, width=100, command=game.button_rock_on_click, image=rock)
-buttonPaper = Button(topFrame, height=100, width=100, command=game.button_paper_on_click, image=paper)
-buttonScissors = Button(topFrame, height=100, width=100, command=game.button_scissors_on_click, image=scissors)
+buttonRock = Button(topFrame, height=100, width=100, command=lambda: main.play(0), image=rock)
+buttonPaper = Button(topFrame, height=100, width=100, command=lambda: main.play(1), image=paper)
+buttonScissors = Button(topFrame, height=100, width=100, command=lambda: main.play(2), image=scissors)
 buttonRock.pack(side=LEFT)
 buttonPaper.pack(side=LEFT)
 buttonScissors.pack(side=LEFT)
